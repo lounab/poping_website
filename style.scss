@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+body{
+    font-family: 'Poppins';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background-color: #F2E8CF;
+
+    #navbar{
+        z-index: 100;
+        position: absolute;
+        padding: 0 120px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 75px;
+        left: 0px;
+        top: 0px;
+        background: rgba(255, 255, 255, 0.26);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #424530;
+
+        .logo{
+            width: 100%;
+            height: 50px;
+        }
+
+        ul{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            li{
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 24px;
+                position: relative;
+                width: fit-content;
+                padding: 0.1em 0;  
+                cursor: pointer;
+
+                a{
+                    color: #424530;
+                    text-decoration: none;
+                }
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0.125em;
+                    
+                    background-color: #424530;;
+                    
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 400ms ease-out;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+        background-color: #FFEFCD;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        #ethique{
+            position: relative;
+           
+            .circle{
+                z-index: 0;
+                position: absolute;
+                background-color: #A7C957;
+                border-radius: 50%;
+                width: 400px;
+                height: 400px;
+                right: 100px;
+                bottom: -200px;
+            }
+        }
+
+        #services{
+            overflow: hidden;
+            .circle{
+                z-index: 0;
+                position: absolute;
+                background-color: #A7C957;
+                border-radius: 50%;
+                width: 400px;
+                height: 400px;
+                right: -190px;
+                top: -200px;
+            }
+            #linkexcep{
+                margin-top: 0;
+            }
+        }
+
+        #contact{
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px; 
+
+            h2{
+                margin: 0;
+                font-weight: 500;
+                font-size: 40px;
+            }
+
+            p{
+                font-weight: 400;
+                font-size: 16px;
+                text-align: center;
+                color: white;
+            }
+
+            .line{
+                position: absolute;
+                left: 120px;
+            }
+        }
+
+        section{
+            position: relative;
+            scroll-snap-align: start;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:nth-of-type(odd){
+                background-color: #FFEFCD;
+                color: #386641
+            }
+
+            &:nth-of-type(even){
+                background-color: #6A994E;
+                color: white;
+            }
+
+            .main_content{
+                padding: 8% 80px;
+                box-sizing: border-box;
+                width: 60%;
+                height: 100%;
+
+                @media screen and (max-height: 800px)
+                {
+                    padding: 100px 50px;
+
+                    p{
+                        font-size: 14px;
+                    }
+                }
+
+                h1{
+                    position: relative;
+                    z-index: 100;
+                    font-weight: 500;
+                    font-size: 12vh;
+                    line-height: 95px;
+                    margin: 0 0 5% 0;
+                }
+
+                P{
+                    position: relative;
+                    z-index: 100;
+                    text-align: justify;
+                    color: #FFFFFF;
+                }
+
+                .p_green{
+                    z-index: 100;
+                    color: #424530!important
+                }
+                .link{
+                    z-index: 100;
+                    cursor: pointer;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 30px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-align: right;
+                    
+                }
+            }
+
+            .main_image{
+                background-color: red;
+                width: 40%;
+                height: 100%;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-image: url('medias/restaurant.png');
+            }
+
+            #restaurant{
+                background-image: url('medias/restaurant.png');
+            }
+
+            #service{
+                background-image: url('medias/livreur.png');
+            }
+
+            #equipe{
+                background-image: url('medias/team.png');
+            }
+
+            #ethique{
+                background-image: url('medias/ethique.png');
+            }
+
+            &:nth-of-type(1){
+                position: relative;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 120px;
+                
+                #salade{
+                    z-index: 1;
+                    position: absolute;
+                    height: 101%;
+                    right: -20%;
+                    transform: translate(-50%, -50%);
+                    animation: rotation 50s infinite linear;
+                }
+
+                @keyframes rotation {
+                    from {
+                      transform: rotate(0deg);
+                    }
+                    to {
+                      transform: rotate(359deg);
+                    }
+                }
+
+                #scroll_img{
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    height: 50px;
+                    bottom: 10px;
+                    left: 50%;
+                    animation: float 3s ease-in-out infinite;
+                }
+
+                @keyframes float {
+                    0% {
+                        transform: translatey(0px);
+                    }
+                    50% {
+                        transform: translatey(-15px);
+                    }
+                    100% {
+                        transform: translatey(0px);
+                    }
+                }
+
+                .round{
+                    z-index: 1;
+                    position: absolute;
+                    width: 400px;
+                    height: 400px;
+                    border-radius: 50%;
+                    left: -87px;
+                    top: 149px;
+                    background: #A7C957;
+                }
+                h1{
+                    margin: 0;
+                    padding: 0;
+                    z-index: 100;
+                    font-weight: 500;
+                    font-size: 10vw;
+                    line-height: 160px;
+                    position: relative;
+                }
+
+                h2{
+                    position: relative;
+                    margin: 0;
+                    padding: 0;
+                    z-index: 100;
+                    font-weight: 400;
+                    font-size: 5vw;
+                }
+                .options{
+                    position: relative;
+                    z-index: 100;
+                    margin-top: 50px;
+                    display: flex;
+                    gap: 100px;
+                    
+                    span{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        font-weight: 400;
+                        font-size: 16px;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
